@@ -17,7 +17,7 @@ we can upload any file type and will get a file in /uploads/profile_SOMEUUID.EXT
 
 browsing to this file will also give us the correct content-type, which gives us full xss
 
-[xss](/images/20260315_22h06m29s_grim.png)
+![xss](/images/20260315_22h06m29s_grim.png)
 
 ---
 
@@ -49,13 +49,13 @@ pty.spawn("sh")
 
 we don't get anything right away, but after waiting and/or causing some actions on the site we see a connection:
 
-[first shell](/images/20260315_22h36m48s_grim.png)
+![first shell](/images/20260315_22h36m48s_grim.png)
 
 so the server literally is just executing our file. probably via some combination of eval and read. this was kind of frustrating to me because it is so stupid, but its just a lesson to consider everything
 
 however the connection closes after a second or two, so we need to get our commands in fast:
 
-[speed hacking](/images/20260315_22h39m57s_grim.png)
+![speed hacking](/images/20260315_22h39m57s_grim.png)
 
 this is where the name and hint "speed chatting" and "can you hack as fast as you can chat?" come from
 
