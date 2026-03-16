@@ -66,14 +66,14 @@ that's also _more_ likes than i sent
 
 reversing this will probably let us get a session as any user
 
-the first value is base64-encoded zlib data (indicated by .eJ)
+the first value (ignoring the leading dot) is base64-encoded zlib data (indicated by eJ)
 
 ```
 >>> import base64
 >>> import zlib
->>> data = ".eJwli80KQEAURl_l-tazMBKRvIeQptxB_sqdWcm7G1mdzqlzY7CbkZkFZXuDXAB2FjETQ6E5PQkfjgxty8oRdT7Js7TzlmOL_ukVvj6Gq1A6DuqFr2EJQetfDrMzSlQ1nheF\
+>>> data = "eJwli80KQEAURl_l-tazMBKRvIeQptxB_sqdWcm7G1mdzqlzY7CbkZkFZXuDXAB2FjETQ6E5PQkfjgxty8oRdT7Js7TzlmOL_ukVvj6Gq1A6DuqFr2EJQetfDrMzSlQ1nheF\
 YyIz"
->>> decode = base64.urlsafe_b64decode(data.strip('.'))
+>>> decode = base64.urlsafe_b64decode(data)
 >>> decode
 b'x\x9c%\x8b\xcd\n@@\x14F_\xe5\xfa\xd6\xb30\x12\x91\xbc\x87\x90\xa6\xdcA\xfe\xca\x9dY\xc9\xbb\x1bY\x9d\xce\xa9sc\xb0\x9b\x91\x99\x05e{\x83\\\x00v\x161\x13C\xa19=\t\x1f\x8e\x0cm\xcb\xca\x11u>\xc9\xb3\xb4\xf3\x96c\x8b\xfe\xe9\x15\xbe>\x86\xabP:\x0e\xea\x85\xafa\tA\xeb_\x0e\xb33JT5\x9e\x17\x85c"3'
 >>> zlib.decompress(decode)
