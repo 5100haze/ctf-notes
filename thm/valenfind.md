@@ -22,7 +22,6 @@ exploring the web app:
   - change profile theme (GET /api/fetch_layout?layout=theme_classic.html) <---
 - send likes (POST /like/ID)
   - one per person
-- no javascript
 
 ---
 
