@@ -85,8 +85,6 @@ def shell(client_socket):
 ...............................................
 ```
 
-there is a `shell` endpoint that still works which is lol
-
 but what we really want to find out is the current value instead of 'some_endpoint'
 
 i just used this _dirty_ script to try to find any endpoints (using socat to make closing the connection easier)
