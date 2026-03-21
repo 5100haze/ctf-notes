@@ -58,6 +58,8 @@ now that our payload is stored we perform the vulnerable read via "nearevents":
 
 as you can see, we got the first user back "admin" in the nearby events name field!!
 
+- edit note: after looking a bit more after solving this box i found there is [another sqli](https://github.com/BridgerAlderson/CVE-2024-51482) in this version which does not require all this fuss of making an event and reading the stored payload back out, woopsy
+
 now we can select the password for any user we want
 
 - we can see there are 3 users from the web ui
@@ -99,7 +101,7 @@ all we need to do is change the image filename, which undergoes shell expansion,
 
 however, there is some client side validation in main.js we need to remove (it denies special chars):
 
-`configUiValid = function () {return true}`
+`configUiValid = function() {return true;};`
 
 then we paste the payload into the image name and change the settings to automatically capture screenshots:
 
