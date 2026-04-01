@@ -101,7 +101,7 @@ this lands us as `www-data` and we can access `users.db` from the instance/ dir,
 password = hashlib.md5(request.form['password'].encode()).hexdigest()
 ```
 
-extract the hash for the only other user `fistmathack` and crack the password with rockyou
+extract the hash for the only other user `fismathack` and crack the password with rockyou
 
 `hashcat -a 0 -m 0 fismat.hash rockyou.txt`
 
