@@ -13,7 +13,7 @@ starting by registering an account on the app, note the functions:
 - download source code from about page
 - view converted documents
 
-reading the source code we can find that there is zero sanitization:
+reading the source code we can find that there is zero sanitization besides preventing xxe in the XMLParser args:
 
 ```python
 @app.route('/convert', methods=['POST'])
