@@ -94,7 +94,7 @@ we can also read the gogs app.ini
 
 `ssh -L 3001:localhost:3001 ben@silentium.htb`
 
-there is a 'ben' user already existing, and we can create our own user too. researching recent cves for gogs there is an RCE which involves [bypassing a symlink to overwrite arbitrary files](https://www.wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit)
+there is a 'ben' user already existing, and we can create our own user too. researching recent cves for gogs there is an RCE which involves [bypassing a previous patch via symlink to overwrite arbitrary files](https://www.wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit)
 
 all it entails is making a repo with a symlink to `.git/config` and using the file contents api to put data overwriting the sshCommand to be whatever we want
 
