@@ -199,7 +199,7 @@ it seems like the link is just dead..
 
 ## ad enumeration
 
-bloodyAD will show us we have CREATE_CHILD on the DomanDnsZones and ForestDnsZones. this can be leveraged to point SQL07 at ourselves and take over the dead link on the sql server.
+bloodyAD will show us we have CREATE_CHILD on the DomanDnsZones and ForestDnsZones. this can be leveraged to point SQL07 at ourself and take over the dead link on the sql server.
 
 let's try catching the link authentication with responder, we might get different credentials
 
@@ -220,7 +220,9 @@ sqlmgmt certainly seems like good creds to have. they don't really get us anythi
 
 so now that we've finally gotten to the box we can attack the local service we found earlier at :8000
 
-`curl -UseBasicParsing http://overwatch.htb/MonitorService?wsdl | Select -ExpandProperty RawContent`
+```powershell
+curl -UseBasicParsing "http://overwatch.htb:8000/MonitorService?wsdl" | Select -ExpandProperty RawContent
+```
 
 will get us the wsdl (api description for wcf services) so we can try to attack it. we already know there is a KillProcess endpoint in there with a potential injection.
 
