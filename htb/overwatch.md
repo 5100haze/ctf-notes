@@ -154,7 +154,7 @@ inside the share is a dotnet app, including a .exe, .exe.config, .pdb, grab all 
 
 ## investigating software
 
-looking in the config it describes a MonitoringService with a base address of `http://overwatch.htb:8000/MonitorService, and a couple endpoints that specify [WCF](https://learn.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) contracts.
+looking in the config it describes a MonitoringService with a base address of `http://overwatch.htb:8000/MonitorService`, and a couple endpoints that specify [WCF](https://learn.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) contracts.
 
 we can't access that port directly, but now we have something to target. The endpoint under IMonitoringService contract is a basic http binding, so it should be simple once we get to it
 
